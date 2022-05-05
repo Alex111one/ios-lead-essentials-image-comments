@@ -230,7 +230,7 @@ Given the customer doesn't have connectivity
 		- Test-drive the ImageCommentsPresenter following the Presentation specs.
 			- Look at the Feed Presentation tests and implementation as a guide.
 
-		- Create EssentialFeed/ImageComments/Presentation/ImageCommentsLocalizationTests.swift to ensure the ImageComments.string file supports all localizations in the project.
+		- Create EssentialFeedTests/ImageComments/Presentation/ImageCommentsLocalizationTests.swift to ensure the ImageComments.string file supports all localizations in the project.
 
 	- UI
 		- Create a Test file: EssentialFeediOSTests/ImageComments UI/ImageCommentsSnapshotTests.swift
