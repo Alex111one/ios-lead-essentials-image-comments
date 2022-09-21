@@ -1,6 +1,6 @@
 # The Image Comments Challenge - iOSLeadEssentials.com
 
-![](https://github.com/essentialdevelopercom/ios-lead-essentials-image-comments-challenge/workflows/CI-iOS/badge.svg) ![](https://github.com/essentialdevelopercom/ios-lead-essentials-image-comments-challenge/workflows/CI-macOS/badge.svg)
+![](https://github.com/essentialdevelopercom/ios-lead-essentials-image-comments-challenge/workflows/CI-iOS/badge.svg)
 
 It’s time to put your development skills to the test! 
 
@@ -52,9 +52,13 @@ You'll develop the API, Presentation, UI, and Composition for the 'Image Comment
 
 8) Write tests to validate your implementation, including unit, integration, and snapshot tests (aim to write the test first!).
 
+	- If you see an error like *...Failed to load stored snapshot at URL...* it means Xcode doesn't have permission to read/write to the path where you cloned the repository. To solve the problem, move the folder to another location, such as $HOME.
+
 	- ⚠️ Important: ***Different simulators may generate slightly different snapshots (even if they look the same!).*** So you must run the snapshot tests using the exact same simulator used to take the snapshots:
 
-		- Use *precisely* the 'iPhone 13 - iOS 15.5' simulator.
+		- Use *precisely* the 'iPhone 14 - iOS 16.0' simulator.
+
+		- Also, DON'T add emojis to labels rendered in Snapshot Tests because different OS versions have different emoji images, and it can break the snapshots if it doesn't match the CI emoji image set. So, use only text!
 
 	- Do not change any existing snapshot. They're there to validate your implementation.
 
@@ -196,11 +200,11 @@ Given the customer doesn't have connectivity
 
 1) Fork the latest version of this repository. Here's <a href="https://guides.github.com/activities/forking" target="_blank">how forking works</a>.
 
-2) Open the `EssentialApp/EssentialApp.xcworkspace` on Xcode 13.4.
+2) Open the `EssentialApp/EssentialApp.xcworkspace` on Xcode 14.0.
 	
 	- Other Xcode versions are not supported.
 	
-		- Challenges submitted with branches other than `xcode13_4` will be rejected.
+		- Challenges submitted with branches other than `xcode14_0` will be rejected.
 
 	- Do not change any project settings, including scheme settings.
 
@@ -277,7 +281,7 @@ Given the customer doesn't have connectivity
 
 	- If it does, create a Pull Request from your branch to the main challenge repo's matching branch.
 
-		- For example, if you implemented the challenge using the `xcode13_4` branch, your PR should be from your fork's `xcode13_4` branch into the main repo's `xcode13_4` branch (DO NOT MIX Xcode versions or you'll have merge conflicts!).
+		- For example, if you implemented the challenge using the `xcode14_0` branch, your PR should be from your fork's `xcode14_0` branch into the main repo's `xcode14_0` branch (DO NOT MIX Xcode versions or you'll have merge conflicts!).
 	
 	- The title of the Pull Request should be: Your Name - Image Comments Challenge
 	
