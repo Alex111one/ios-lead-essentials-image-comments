@@ -56,7 +56,7 @@ You'll develop the API, Presentation, UI, and Composition for the 'Image Comment
 
 	- ⚠️ Important: ***Different simulators may generate slightly different snapshots (even if they look the same!).*** So you must run the snapshot tests using the exact same simulator used to take the snapshots:
 
-		- Use *precisely* the 'iPhone 14 - iOS 16.1' simulator.
+		- Use *precisely* the 'iPhone 14 - iOS 16.2' simulator.
 		
 		- If the tests fail on a fresh clone of this repository using the precise simulator mentioned above, reset the simulator to remove any custom settings (Device > Erase All Content and Settings...)
 
@@ -202,11 +202,11 @@ Given the customer doesn't have connectivity
 
 1) Fork the latest version of this repository. Here's <a href="https://guides.github.com/activities/forking" target="_blank">how forking works</a>.
 
-2) Open the `EssentialApp/EssentialApp.xcworkspace` on Xcode 14.1.
+2) Open the `EssentialApp/EssentialApp.xcworkspace` on Xcode 14.2.
 	
 	- Other Xcode versions are not supported.
 	
-		- Challenges submitted with branches other than `xcode14_1` will be rejected.
+		- Challenges submitted with branches other than `xcode14_2` will be rejected.
 
 	- Do not change any project settings, including scheme settings.
 
@@ -283,7 +283,7 @@ Given the customer doesn't have connectivity
 
 	- If it does, create a Pull Request from your branch to the main challenge repo's matching branch.
 
-		- For example, if you implemented the challenge using the `xcode14_1` branch, your PR should be from your fork's `xcode14_1` branch into the main repo's `xcode14_1` branch (DO NOT MIX Xcode versions or you'll have merge conflicts!).
+		- For example, if you implemented the challenge using the `xcode14_2` branch, your PR should be from your fork's `xcode14_2` branch into the main repo's `xcode14_2` branch (DO NOT MIX Xcode versions or you'll have merge conflicts!).
 	
 	- The title of the Pull Request should be: Your Name - Image Comments Challenge
 	
