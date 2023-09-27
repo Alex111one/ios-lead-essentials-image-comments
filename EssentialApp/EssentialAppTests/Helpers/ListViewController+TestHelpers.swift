@@ -6,10 +6,14 @@ import UIKit
 import EssentialFeediOS
 
 extension ListViewController {
-	public override func loadViewIfNeeded() {
-		super.loadViewIfNeeded()
+	func simulateAppearance() {
+		if !isViewLoaded {
+			loadViewIfNeeded()
+			prepareForFirstAppearance()
+		}
 
-		tableView.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+		beginAppearanceTransition(true, animated: false)
+		endAppearanceTransition()
 	}
 
 	func simulateUserInitiatedReload() {
@@ -40,9 +44,7 @@ extension ListViewController {
 		let index = IndexPath(row: row, section: section)
 		return ds?.tableView(tableView, cellForRowAt: index)
 	}
-}
 
-extension ListViewController {
 	@discardableResult
 	func simulateFeedImageViewVisible(at index: Int) -> FeedImageCell? {
 		return feedImageView(at: index) as? FeedImageCell
@@ -103,4 +105,39 @@ extension ListViewController {
 	}
 
 	private var feedImagesSection: Int { 0 }
+
+	private func prepareForFirstAppearance() {
+		setSmallFrameToPreventRenderingCells()
+		replaceRefreshControlWithSpyForiOS17Support()
+	}
+
+	private func setSmallFrameToPreventRenderingCells() {
+		tableView.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+	}
+
+	private func replaceRefreshControlWithSpyForiOS17Support() {
+		let spyRefreshControl = UIRefreshControlSpy()
+
+		refreshControl?.allTargets.forEach { target in
+			refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
+				spyRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
+			}
+		}
+
+		refreshControl = spyRefreshControl
+	}
+}
+
+private class UIRefreshControlSpy: UIRefreshControl {
+	private var _isRefreshing = false
+
+	override var isRefreshing: Bool { _isRefreshing }
+
+	override func beginRefreshing() {
+		_isRefreshing = true
+	}
+
+	override func endRefreshing() {
+		_isRefreshing = false
+	}
 }
