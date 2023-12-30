@@ -106,6 +106,7 @@
 		BF4D99ED2B3FE34D00D3AD0B /* ImageComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4D99EC2B3FE34D00D3AD0B /* ImageComment.swift */; };
 		BF4D99F62B40193B00D3AD0B /* ImageCommentsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4D99F52B40193B00D3AD0B /* ImageCommentsPresenterTests.swift */; };
 		BF4D99F92B40195900D3AD0B /* ImageCommentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4D99F82B40195900D3AD0B /* ImageCommentsPresenter.swift */; };
+		BF4D99FB2B401B2800D3AD0B /* ImageComments.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF4D99FA2B401B2800D3AD0B /* ImageComments.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,7 @@
 		BF4D99EC2B3FE34D00D3AD0B /* ImageComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComment.swift; sourceTree = "<group>"; };
 		BF4D99F52B40193B00D3AD0B /* ImageCommentsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenterTests.swift; sourceTree = "<group>"; };
 		BF4D99F82B40195900D3AD0B /* ImageCommentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenter.swift; sourceTree = "<group>"; };
+		BF4D99FA2B401B2800D3AD0B /* ImageComments.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ImageComments.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -768,6 +770,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4D99F82B40195900D3AD0B /* ImageCommentsPresenter.swift */,
+				BF4D99FA2B401B2800D3AD0B /* ImageComments.strings */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 			files = (
 				087148B7232BEB5400D6BE1A /* Feed.strings in Resources */,
 				08EF9D1F250BB7E8004539C2 /* Shared.strings in Resources */,
+				BF4D99FB2B401B2800D3AD0B /* ImageComments.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
