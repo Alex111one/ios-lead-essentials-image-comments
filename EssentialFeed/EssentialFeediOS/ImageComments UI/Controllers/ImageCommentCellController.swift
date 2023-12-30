@@ -12,3 +12,17 @@ public final class ImageCommentCellController: NSObject {
 		self.viewModel = viewModel
 	}
 }
+
+extension ImageCommentCellController: UITableViewDataSource {
+	public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 1
+	}
+
+	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell: ImageCommentCell = tableView.dequeueReusableCell()
+		cell.usernameLabel.text = viewModel.username
+		cell.dateLabel.text = viewModel.date
+		cell.messageLabel.text = viewModel.message
+		return cell
+	}
+}
