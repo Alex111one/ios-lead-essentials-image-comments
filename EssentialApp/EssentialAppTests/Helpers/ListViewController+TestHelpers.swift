@@ -45,6 +45,29 @@ extension ListViewController {
 		return ds?.tableView(tableView, cellForRowAt: index)
 	}
 
+	private func prepareForFirstAppearance() {
+		setSmallFrameToPreventRenderingCells()
+		replaceRefreshControlWithSpyForiOS17Support()
+	}
+
+	private func setSmallFrameToPreventRenderingCells() {
+		tableView.frame = CGRect(x: 0, y: 0, width: 390, height: 1)
+	}
+
+	private func replaceRefreshControlWithSpyForiOS17Support() {
+		let spyRefreshControl = UIRefreshControlSpy()
+
+		refreshControl?.allTargets.forEach { target in
+			refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
+				spyRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
+			}
+		}
+
+		refreshControl = spyRefreshControl
+	}
+}
+
+extension ListViewController {
 	@discardableResult
 	func simulateFeedImageViewVisible(at index: Int) -> FeedImageCell? {
 		return feedImageView(at: index) as? FeedImageCell
@@ -105,27 +128,34 @@ extension ListViewController {
 	}
 
 	private var feedImagesSection: Int { 0 }
+}
 
-	private func prepareForFirstAppearance() {
-		setSmallFrameToPreventRenderingCells()
-		replaceRefreshControlWithSpyForiOS17Support()
+extension ListViewController {
+	func numberOfRenderedComments() -> Int {
+		numberOfRows(in: commentsSection)
 	}
 
-	private func setSmallFrameToPreventRenderingCells() {
-		tableView.frame = CGRect(x: 0, y: 0, width: 390, height: 1)
+	func commentMessage(at row: Int) -> String? {
+		commentCell(at: row)?.messageLabel.text
 	}
 
-	private func replaceRefreshControlWithSpyForiOS17Support() {
-		let spyRefreshControl = UIRefreshControlSpy()
-
-		refreshControl?.allTargets.forEach { target in
-			refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
-				spyRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
-			}
-		}
-
-		refreshControl = spyRefreshControl
+	func commentDate(at row: Int) -> String? {
+		commentCell(at: row)?.dateLabel.text
 	}
+
+	func commentUsername(at row: Int) -> String? {
+		commentCell(at: row)?.usernameLabel.text
+	}
+
+	private func commentView(at row: Int) -> UITableViewCell? {
+		cell(row: row, section: commentsSection)
+	}
+
+	private func commentCell(at index: Int) -> ImageCommentCell? {
+		commentView(at: index) as? ImageCommentCell
+	}
+
+	private var commentsSection: Int { 0 }
 }
 
 private class UIRefreshControlSpy: UIRefreshControl {
