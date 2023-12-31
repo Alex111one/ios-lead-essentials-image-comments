@@ -115,6 +115,7 @@
 		BF4D9A2A2B404B5900D3AD0B /* IMAGE_COMMENTS_light_extraExtraExtraLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4D9A272B404B5900D3AD0B /* IMAGE_COMMENTS_light_extraExtraExtraLarge.png */; };
 		BF4D9A2B2B404B5900D3AD0B /* IMAGE_COMMENTS_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4D9A282B404B5900D3AD0B /* IMAGE_COMMENTS_dark.png */; };
 		BF4D9A2C2B404B5900D3AD0B /* IMAGE_COMMENTS_light.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4D9A292B404B5900D3AD0B /* IMAGE_COMMENTS_light.png */; };
+		BF4D9A342B41804100D3AD0B /* ImageCommentsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4D9A332B41804100D3AD0B /* ImageCommentsEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -254,6 +255,7 @@
 		BF4D9A272B404B5900D3AD0B /* IMAGE_COMMENTS_light_extraExtraExtraLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMAGE_COMMENTS_light_extraExtraExtraLarge.png; sourceTree = "<group>"; };
 		BF4D9A282B404B5900D3AD0B /* IMAGE_COMMENTS_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMAGE_COMMENTS_dark.png; sourceTree = "<group>"; };
 		BF4D9A292B404B5900D3AD0B /* IMAGE_COMMENTS_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMAGE_COMMENTS_light.png; sourceTree = "<group>"; };
+		BF4D9A332B41804100D3AD0B /* ImageCommentsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -766,6 +768,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4D99E82B3FD52800D3AD0B /* ImageCommentsMapper.swift */,
+				BF4D9A332B41804100D3AD0B /* ImageCommentsEndpoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1087,6 +1090,7 @@
 				08285AFB228C17B8000A8987 /* CoreDataHelpers.swift in Sources */,
 				08C0880E21E4EF2900ACFB30 /* FeedItemsMapper.swift in Sources */,
 				087148C4232BFCF100D6BE1A /* FeedImageViewModel.swift in Sources */,
+				BF4D9A342B41804100D3AD0B /* ImageCommentsEndpoint.swift in Sources */,
 				08EF9D29250BBC6C004539C2 /* ResourceErrorView.swift in Sources */,
 				08E546CC24F9631300C64FAE /* FeedImageDataMapper.swift in Sources */,
 				08E5941522523FCC00E2D213 /* FeedCachePolicy.swift in Sources */,
