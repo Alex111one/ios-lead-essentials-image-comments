@@ -9,7 +9,7 @@ import EssentialApp
 import EssentialFeed
 import EssentialFeediOS
 
-class ImageCommentsUIIntegrationTests: FeedUIIntegrationTests {
+class ImageCommentsUIIntegrationTests: XCTestCase {
 	func test_commentsView_hasTitle() {
 		let (sut, _) = makeSUT()
 
@@ -126,7 +126,7 @@ class ImageCommentsUIIntegrationTests: FeedUIIntegrationTests {
 		XCTAssertEqual(sut.errorMessage, nil)
 	}
 
-	override func test_tapOnErrorView_hidesErrorMessage() {
+	func test_tapOnErrorView_hidesErrorMessage() {
 		let (sut, loader) = makeSUT()
 
 		sut.simulateAppearance()
@@ -142,7 +142,6 @@ class ImageCommentsUIIntegrationTests: FeedUIIntegrationTests {
 	// MARK: - Helpers
 
 	private func makeSUT(
-		selection: @escaping (FeedImage) -> Void = { _ in },
 		file: StaticString = #filePath,
 		line: UInt = #line
 	) -> (sut: ListViewController, loader: LoaderSpy) {
