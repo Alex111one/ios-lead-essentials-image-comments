@@ -9,8 +9,7 @@ import EssentialFeed
 import EssentialFeediOS
 
 class FeedUIIntegrationTests: XCTestCase {
-	
-    func test_feedView_hasTitle() {
+	func test_feedView_hasTitle() {
 		let (sut, _) = makeSUT()
 
 		sut.simulateAppearance()
